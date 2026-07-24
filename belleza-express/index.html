@@ -681,12 +681,12 @@
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero" aria-label="Bienvenida" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" aria-label="Bienvenida" style="--hero-bg: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200');">
     <div class="hero-content">
-      <div data-if="RATING" class="rating-badge reveal">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
-      <p class="hero-eyebrow reveal">{{CATEGORIA}} · Tijuana</p>
+      <div class="rating-badge reveal">⭐ 4.2 · 5 reseñas en Google</div>
+      <p class="hero-eyebrow reveal">Salón de belleza · Tijuana</p>
       <h1 class="hero-title reveal reveal-delay-1">Belleza Express</h1>
-      <p data-if="HERO_COPY" class="hero-copy reveal reveal-delay-2">{{HERO_COPY}}</p>
+      <p class="hero-copy reveal reveal-delay-2">Belleza Express en Tijuana ofrece atención amable y precios accesibles para cuidar tu belleza. Bienvenida a tu salón de confianza.</p>
       <p class="hero-sub reveal reveal-delay-2">
         Realza tu belleza con manos expertas. Cortes, color, uñas y tratamientos en el corazón de Tijuana.
       </p>
@@ -725,13 +725,7 @@
   </div>
 
   <!-- ── ANÁLISIS (solo cuando LLM genera contenido) ── -->
-  <section data-if="ANALISIS_HTML" class="analisis-seccion" aria-label="Análisis del negocio">
-    <div class="analisis-inner">
-      <h2>Análisis rápido de Belleza Express</h2>
-      <p class="subtitulo">Basado en las reseñas reales de tus clientes en Google</p>
-      {{ANALISIS_HTML}}
-    </div>
-  </section>
+  
 
   <!-- ── SERVICIOS ── -->
   <section class="section-gap" id="servicios" aria-label="Servicios">
@@ -744,7 +738,7 @@
         </p>
       </div>
       <div class="servicios-grid">
-        {{SERVICIOS_HTML}}
+        
       </div>
     </div>
   </section>
@@ -860,14 +854,21 @@
   </section>
 
   <!-- ── TESTIMONIOS REALES (Google, solo con LLM) ── -->
-  <section data-if="TESTIMONIOS_HTML" class="testimonios section-gap" style="background:var(--crema-2)" aria-label="Reseñas reales de clientes">
+  <section class="testimonios section-gap" style="background:var(--crema-2)" aria-label="Reseñas reales de clientes">
     <div class="container">
       <div style="text-align:center">
         <p class="tag reveal">Reseñas reales de Google</p>
         <h2 class="title-lg reveal reveal-delay-1">Lo que dicen nuestros clientes</h2>
       </div>
       <div style="margin-top:40px">
-        {{TESTIMONIOS_HTML}}
+        <blockquote class="testimonio">
+      <p>"Buena atención"</p>
+      <cite>— Laura</cite>
+    </blockquote>
+<blockquote class="testimonio">
+      <p>"Precios accesibles"</p>
+      <cite>— Marta</cite>
+    </blockquote>
       </div>
     </div>
   </section>
@@ -882,7 +883,7 @@
           <div class="ubicacion-info">
             <p><span class="ico" aria-hidden="true">📍</span><span></span></p>
             <p><span class="ico" aria-hidden="true">📞</span>
-               <a href="tel:+526641987654" style="text-decoration:underline;text-underline-offset:3px">+526641987654</a>
+               <a href="tel:526641987654" style="text-decoration:underline;text-underline-offset:3px">526641987654</a>
             </p>
           </div>
           <div class="horario-grid">
@@ -890,10 +891,7 @@
             <span class="horario-dia">Sábado</span><span class="horario-hora">9:00 – 17:00 hrs</span>
             <span class="horario-dia">Domingo</span><span class="horario-hora">Cerrado</span>
           </div>
-          <section data-if="HORARIOS_HTML" class="horarios-seccion" style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(17,24,39,.08)">
-            <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Horarios</h3>
-            {{HORARIOS_HTML}}
-          </section>
+          
           <a href="https://wa.me/5216641987654?text=Hola%2C%20quiero%20agendar%20una%20cita"
              class="btn-primary" style="margin-top:36px;color:var(--tinta)">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.892C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
@@ -936,7 +934,7 @@
     <div class="footer-sep"></div>
     <div class="footer-info">
       <p></p>
-      <p>+526641987654 · Tijuana</p>
+      <p>526641987654 · Tijuana</p>
     </div>
     <p class="footer-credit">SITIO DE DEMOSTRACIÓN · NOVA IA STUDIO</p>
   </footer>
