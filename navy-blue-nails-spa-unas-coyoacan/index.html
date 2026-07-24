@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navy Blue Nails Spa (Uñas Coyoacán) — Estética & Belleza en Coyoacán, Ciudad de México</title>
-  <meta name="description" content="Navy Blue Nails Spa (Uñas Coyoacán) en Coyoacán, Ciudad de México. Agenda tu cita por WhatsApp. Cortes, color, uñas y tratamientos de belleza." />
+  <title>Navy Blue Nails Spa (uñas Coyoacán) — Estética & Belleza en Coyoacán, Ciudad de México</title>
+  <meta name="description" content="Navy Blue Nails Spa (uñas Coyoacán) en Coyoacán, Ciudad de México. Agenda tu cita por WhatsApp. Cortes, color, uñas y tratamientos de belleza." />
 
   <!-- OWASP A02 — Content Security Policy -->
   <meta http-equiv="Content-Security-Policy"
     content="default-src 'self';
              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
              font-src https://fonts.gstatic.com;
-             img-src 'self' data: https://images.unsplash.com;
+             img-src 'self' data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com https://lh6.googleusercontent.com https://streetviewpixels-pa.googleapis.com;
              frame-src https://maps.google.com;
              script-src 'self' 'unsafe-inline';
              connect-src 'none';" />
@@ -192,7 +192,7 @@
       overflow: hidden;
       background:
         linear-gradient(160deg, rgba(17,24,39,.72) 0%, rgba(17,24,39,.45) 100%),
-        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=90&w=1800&auto=format&fit=crop')
+        var(--hero-bg, url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=90&w=1800&auto=format&fit=crop'))
         center / cover no-repeat;
     }
     .hero::after {
@@ -583,6 +583,87 @@
       .galeria-tall { grid-row: span 1; }
       .galeria-grid .h-tall { height: 200px; }
     }
+
+    /* ── Nuevas secciones personalizadas ── */
+    .rating-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hero-copy {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 16px auto;
+      line-height: 1.5;
+      color: rgba(255,255,255,.82);
+    }
+    .analisis-seccion {
+      background: #fafafa;
+      padding: 60px 20px;
+      text-align: left;
+    }
+    .analisis-seccion .analisis-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .analisis-seccion h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+    .analisis-seccion .subtitulo {
+      color: #666;
+      margin-bottom: 32px;
+    }
+    .analisis-item {
+      padding: 16px 20px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border-left: 4px solid;
+    }
+    .analisis-item.fortaleza  { background: #e8f5e9; border-color: #4caf50; }
+    .analisis-item.oportunidad{ background: #fff3e0; border-color: #ff9800; }
+    .analisis-item.solucion   { background: #e3f2fd; border-color: #2196f3; }
+    .analisis-item span       { font-weight: 600; margin-right: 8px; }
+    .servicio {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .servicio h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .servicio p { font-size: .875rem; color: var(--tinta-suave); }
+    .testimonio {
+      background: #f9f9f9;
+      padding: 20px;
+      border-left: 4px solid var(--mauve);
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .testimonio cite {
+      display: block;
+      margin-top: 8px;
+      font-weight: 600;
+      font-style: normal;
+      color: #666;
+    }
+    .horarios {
+      list-style: none;
+      padding: 0;
+    }
+    .horarios li { padding: 4px 0; color: #555; }
+    [data-sospechoso="true"] {
+      outline: 2px dashed orange;
+      outline-offset: -2px;
+    }
   </style>
 </head>
 <body>
@@ -590,7 +671,7 @@
   <!-- ── NAVBAR ── -->
   <nav class="navbar" id="navbar" aria-label="Navegación principal">
     <div class="container navbar-inner">
-      <div class="navbar-logo"><span>Navy Blue Nails Spa (Uñas Coyoacán)</span></div>
+      <div class="navbar-logo"><span>Navy Blue Nails Spa (uñas Coyoacán)</span></div>
       <a href="https://wa.me/5215585290368?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita"
          class="btn-primary" aria-label="Agendar cita por WhatsApp">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.892C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
@@ -600,10 +681,12 @@
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero" aria-label="Bienvenida">
+  <section class="hero" aria-label="Bienvenida" style="--hero-bg: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200');">
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Estética &amp; Belleza · Coyoacán, Ciudad de México</p>
-      <h1 class="hero-title reveal reveal-delay-1">Navy Blue Nails Spa (Uñas Coyoacán)</h1>
+      <div class="rating-badge reveal">⭐ 4.8 · 173 reseñas en Google</div>
+      <p class="hero-eyebrow reveal">Salón de manicura y pedicura · Coyoacán, Ciudad de México</p>
+      <h1 class="hero-title reveal reveal-delay-1">Navy Blue Nails Spa (uñas Coyoacán)</h1>
+      <p class="hero-copy reveal reveal-delay-2">Navy Blue Nails Spa en Coyoacán: 4.8⭐ con 173 reseñas de clientas que confían en ti. Bienvenida a tu vitrina digital profesional.</p>
       <p class="hero-sub reveal reveal-delay-2">
         Realza tu belleza con manos expertas. Cortes, color, uñas y tratamientos en el corazón de Coyoacán, Ciudad de México.
       </p>
@@ -641,6 +724,17 @@
     </div>
   </div>
 
+  <!-- ── ANÁLISIS (solo cuando LLM genera contenido) ── -->
+  <section class="analisis-seccion" aria-label="Análisis del negocio">
+    <div class="analisis-inner">
+      <h2>Análisis rápido de Navy Blue Nails Spa (uñas Coyoacán)</h2>
+      <p class="subtitulo">Basado en las reseñas reales de tus clientes en Google</p>
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> 4.8⭐ con múltiples reseñas — tus clientas de Coyoacán te recomiendan activamente y confían en tu trabajo.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> No tienes sitio web ni sistema de reservas online. Muchas clientas potenciales buscan agendar 24/7 sin tener que llamar o esperar respuesta por redes.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web profesional con reservas online integradas + WhatsApp Business permite que clientas nuevas y recurrentes agenden en cualquier momento, y tú recibes confirmaciones automáticas sin perder información.</div></div>
+    </div>
+  </section>
+
   <!-- ── SERVICIOS ── -->
   <section class="section-gap" id="servicios" aria-label="Servicios">
     <div class="container">
@@ -652,42 +746,22 @@
         </p>
       </div>
       <div class="servicios-grid">
-        <div class="servicio-card reveal">
-          <div class="servicio-icon">✂️</div>
-          <p class="servicio-title">Corte &amp; Peinado</p>
-          <p class="servicio-desc">Cortes de tendencia, peinados de evento y asesoría de imagen personalizada con los mejores productos.</p>
-          <span class="servicio-precio">desde $150 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-1">
-          <div class="servicio-icon">🎨</div>
-          <p class="servicio-title">Color &amp; Mechas</p>
-          <p class="servicio-desc">Balayage, rayitos, ombre y color de fantasía con tintes de alta gama que cuidan tu cabello.</p>
-          <span class="servicio-precio">desde $400 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-2">
-          <div class="servicio-icon">💅</div>
-          <p class="servicio-title">Uñas &amp; Gelish</p>
-          <p class="servicio-desc">Manicura, pedicura, gelish, acrílicas y nail art. Diseños únicos que duran hasta 3 semanas.</p>
-          <span class="servicio-precio">desde $200 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-1">
-          <div class="servicio-icon">✨</div>
-          <p class="servicio-title">Tratamientos</p>
-          <p class="servicio-desc">Keratina, hidratación profunda y tratamientos reparadores para devolver la vida a tu cabello.</p>
-          <span class="servicio-precio">desde $350 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-2">
-          <div class="servicio-icon">🌿</div>
-          <p class="servicio-title">Spa Facial</p>
-          <p class="servicio-desc">Limpieza profunda, hidratación y masajes faciales relajantes para una piel radiante.</p>
-          <span class="servicio-precio">desde $280 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-3">
-          <div class="servicio-icon">👁️</div>
-          <p class="servicio-title">Cejas &amp; Pestañas</p>
-          <p class="servicio-desc">Diseño de cejas, depilación y extensión de pestañas para una mirada irresistible.</p>
-          <span class="servicio-precio">desde $120 MXN</span>
-        </div>
+        <div class="servicio">
+      <h3>Manicure gel</h3>
+      <p>Acabado brillante y duradero para manos impecables</p>
+    </div>
+<div class="servicio">
+      <h3>Pedicure spa</h3>
+      <p>Tratamiento relajante con hidratación profunda</p>
+    </div>
+<div class="servicio">
+      <h3>Acrílicas decoradas</h3>
+      <p>Diseños personalizados y tendencias en uñas</p>
+    </div>
+<div class="servicio" data-sospechoso="true">
+      <h3>Esmaltado simple</h3>
+      <p>Colores vibrantes con acabado clásico y prolongado</p>
+    </div>
       </div>
     </div>
   </section>
@@ -700,13 +774,13 @@
           <img
             class="sobre-img"
             src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=85&w=800&auto=format&fit=crop"
-            alt="Interior del salón Navy Blue Nails Spa (Uñas Coyoacán)"
+            alt="Interior del salón Navy Blue Nails Spa (uñas Coyoacán)"
             loading="lazy" />
         </div>
         <div class="sobre-texto reveal reveal-delay-1">
           <p class="tag">Nuestra historia</p>
           <h2 class="title-lg" style="margin-bottom:24px">El lugar donde<br/><em>brillás</em></h2>
-          <p>En Navy Blue Nails Spa (Uñas Coyoacán) creemos que la belleza es una forma de bienestar. Nuestro equipo de estilistas certificadas trabaja con pasión para que cada visita sea una experiencia que recuerdes.</p>
+          <p>En Navy Blue Nails Spa (uñas Coyoacán) creemos que la belleza es una forma de bienestar. Nuestro equipo de estilistas certificadas trabaja con pasión para que cada visita sea una experiencia que recuerdes.</p>
           <p>Ubicadas en el corazón de Coyoacán, Ciudad de México, combinamos técnica, productos premium y un ambiente cálido para hacer de tu cita un momento especial.</p>
           <div class="sobre-stat">
             <div>
@@ -802,6 +876,9 @@
     </div>
   </section>
 
+  <!-- ── TESTIMONIOS REALES (Google, solo con LLM) ── -->
+  
+
   <!-- ── UBICACIÓN ── -->
   <section class="section-gap" style="background:var(--crema-2)" aria-label="Ubicación y contacto">
     <div class="container">
@@ -820,6 +897,7 @@
             <span class="horario-dia">Sábado</span><span class="horario-hora">9:00 – 17:00 hrs</span>
             <span class="horario-dia">Domingo</span><span class="horario-hora">Cerrado</span>
           </div>
+          
           <a href="https://wa.me/5215585290368?text=Hola%2C%20quiero%20agendar%20una%20cita"
              class="btn-primary" style="margin-top:36px;color:var(--tinta)">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.892C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
@@ -830,7 +908,7 @@
           <iframe
             class="map-iframe"
             loading="lazy"
-            title="Ubicación de Navy Blue Nails Spa (Uñas Coyoacán)"
+            title="Ubicación de Navy Blue Nails Spa (uñas Coyoacán)"
             src="https://maps.google.com/maps?q=19.3442791,-99.1501763&z=16&output=embed"
             aria-label="Mapa de ubicación"
             referrerpolicy="no-referrer-when-downgrade">
@@ -847,7 +925,7 @@
       <h2 class="cta-final-title reveal reveal-delay-1">Tu transformación<br/>te espera</h2>
       <p class="cta-final-sub reveal reveal-delay-2">Agenda tu cita hoy y descubre por qué Coyoacán, Ciudad de México nos elige.</p>
       <div class="reveal reveal-delay-3">
-        <a href="https://wa.me/5215585290368?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita%20en%20Navy Blue Nails Spa (Uñas Coyoacán)"
+        <a href="https://wa.me/5215585290368?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita%20en%20Navy Blue Nails Spa (uñas Coyoacán)"
            class="btn-primary" style="font-size:1rem;padding:18px 44px">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.892C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
           Escribir por WhatsApp ahora
@@ -858,7 +936,7 @@
 
   <!-- ── FOOTER ── -->
   <footer>
-    <div class="footer-logo"><span>Navy Blue Nails Spa (Uñas Coyoacán)</span></div>
+    <div class="footer-logo"><span>Navy Blue Nails Spa (uñas Coyoacán)</span></div>
     <div class="footer-sep"></div>
     <div class="footer-info">
       <p>Inglaterra 101, Parque San Andrés, Coyoacán, 04040 Ciudad de México, CDMX, México</p>
