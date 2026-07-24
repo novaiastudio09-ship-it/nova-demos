@@ -11,7 +11,7 @@
     content="default-src 'self';
              style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
              font-src https://fonts.gstatic.com;
-             img-src 'self' data: https://images.unsplash.com;
+             img-src 'self' data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com https://lh6.googleusercontent.com https://streetviewpixels-pa.googleapis.com;
              frame-src https://maps.google.com;
              script-src 'self' 'unsafe-inline';
              connect-src 'none';" />
@@ -192,7 +192,7 @@
       overflow: hidden;
       background:
         linear-gradient(160deg, rgba(17,24,39,.72) 0%, rgba(17,24,39,.45) 100%),
-        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=90&w=1800&auto=format&fit=crop')
+        var(--hero-bg, url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=90&w=1800&auto=format&fit=crop'))
         center / cover no-repeat;
     }
     .hero::after {
@@ -583,6 +583,87 @@
       .galeria-tall { grid-row: span 1; }
       .galeria-grid .h-tall { height: 200px; }
     }
+
+    /* ── Nuevas secciones personalizadas ── */
+    .rating-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .hero-copy {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 16px auto;
+      line-height: 1.5;
+      color: rgba(255,255,255,.82);
+    }
+    .analisis-seccion {
+      background: #fafafa;
+      padding: 60px 20px;
+      text-align: left;
+    }
+    .analisis-seccion .analisis-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .analisis-seccion h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+    .analisis-seccion .subtitulo {
+      color: #666;
+      margin-bottom: 32px;
+    }
+    .analisis-item {
+      padding: 16px 20px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border-left: 4px solid;
+    }
+    .analisis-item.fortaleza  { background: #e8f5e9; border-color: #4caf50; }
+    .analisis-item.oportunidad{ background: #fff3e0; border-color: #ff9800; }
+    .analisis-item.solucion   { background: #e3f2fd; border-color: #2196f3; }
+    .analisis-item span       { font-weight: 600; margin-right: 8px; }
+    .servicio {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .servicio h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .servicio p { font-size: .875rem; color: var(--tinta-suave); }
+    .testimonio {
+      background: #f9f9f9;
+      padding: 20px;
+      border-left: 4px solid var(--mauve);
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .testimonio cite {
+      display: block;
+      margin-top: 8px;
+      font-weight: 600;
+      font-style: normal;
+      color: #666;
+    }
+    .horarios {
+      list-style: none;
+      padding: 0;
+    }
+    .horarios li { padding: 4px 0; color: #555; }
+    [data-sospechoso="true"] {
+      outline: 2px dashed orange;
+      outline-offset: -2px;
+    }
   </style>
 </head>
 <body>
@@ -600,10 +681,12 @@
   </nav>
 
   <!-- ── HERO ── -->
-  <section class="hero" aria-label="Bienvenida">
+  <section class="hero" aria-label="Bienvenida" style="--hero-bg: url('{{HERO_IMG}}');">
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Estética &amp; Belleza · Lerdo</p>
+      <div data-if="RATING" class="rating-badge reveal">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+      <p class="hero-eyebrow reveal">{{CATEGORIA}} · Lerdo</p>
       <h1 class="hero-title reveal reveal-delay-1">Lerdo Dental Clinic</h1>
+      <p data-if="HERO_COPY" class="hero-copy reveal reveal-delay-2">{{HERO_COPY}}</p>
       <p class="hero-sub reveal reveal-delay-2">
         Realza tu belleza con manos expertas. Cortes, color, uñas y tratamientos en el corazón de Lerdo.
       </p>
@@ -641,6 +724,15 @@
     </div>
   </div>
 
+  <!-- ── ANÁLISIS (solo cuando LLM genera contenido) ── -->
+  <section data-if="ANALISIS_HTML" class="analisis-seccion" aria-label="Análisis del negocio">
+    <div class="analisis-inner">
+      <h2>Análisis rápido de Lerdo Dental Clinic</h2>
+      <p class="subtitulo">Basado en las reseñas reales de tus clientes en Google</p>
+      {{ANALISIS_HTML}}
+    </div>
+  </section>
+
   <!-- ── SERVICIOS ── -->
   <section class="section-gap" id="servicios" aria-label="Servicios">
     <div class="container">
@@ -652,42 +744,7 @@
         </p>
       </div>
       <div class="servicios-grid">
-        <div class="servicio-card reveal">
-          <div class="servicio-icon">✂️</div>
-          <p class="servicio-title">Corte &amp; Peinado</p>
-          <p class="servicio-desc">Cortes de tendencia, peinados de evento y asesoría de imagen personalizada con los mejores productos.</p>
-          <span class="servicio-precio">desde $150 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-1">
-          <div class="servicio-icon">🎨</div>
-          <p class="servicio-title">Color &amp; Mechas</p>
-          <p class="servicio-desc">Balayage, rayitos, ombre y color de fantasía con tintes de alta gama que cuidan tu cabello.</p>
-          <span class="servicio-precio">desde $400 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-2">
-          <div class="servicio-icon">💅</div>
-          <p class="servicio-title">Uñas &amp; Gelish</p>
-          <p class="servicio-desc">Manicura, pedicura, gelish, acrílicas y nail art. Diseños únicos que duran hasta 3 semanas.</p>
-          <span class="servicio-precio">desde $200 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-1">
-          <div class="servicio-icon">✨</div>
-          <p class="servicio-title">Tratamientos</p>
-          <p class="servicio-desc">Keratina, hidratación profunda y tratamientos reparadores para devolver la vida a tu cabello.</p>
-          <span class="servicio-precio">desde $350 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-2">
-          <div class="servicio-icon">🌿</div>
-          <p class="servicio-title">Spa Facial</p>
-          <p class="servicio-desc">Limpieza profunda, hidratación y masajes faciales relajantes para una piel radiante.</p>
-          <span class="servicio-precio">desde $280 MXN</span>
-        </div>
-        <div class="servicio-card reveal reveal-delay-3">
-          <div class="servicio-icon">👁️</div>
-          <p class="servicio-title">Cejas &amp; Pestañas</p>
-          <p class="servicio-desc">Diseño de cejas, depilación y extensión de pestañas para una mirada irresistible.</p>
-          <span class="servicio-precio">desde $120 MXN</span>
-        </div>
+        {{SERVICIOS_HTML}}
       </div>
     </div>
   </section>
@@ -802,6 +859,19 @@
     </div>
   </section>
 
+  <!-- ── TESTIMONIOS REALES (Google, solo con LLM) ── -->
+  <section data-if="TESTIMONIOS_HTML" class="testimonios section-gap" style="background:var(--crema-2)" aria-label="Reseñas reales de clientes">
+    <div class="container">
+      <div style="text-align:center">
+        <p class="tag reveal">Reseñas reales de Google</p>
+        <h2 class="title-lg reveal reveal-delay-1">Lo que dicen nuestros clientes</h2>
+      </div>
+      <div style="margin-top:40px">
+        {{TESTIMONIOS_HTML}}
+      </div>
+    </div>
+  </section>
+
   <!-- ── UBICACIÓN ── -->
   <section class="section-gap" style="background:var(--crema-2)" aria-label="Ubicación y contacto">
     <div class="container">
@@ -820,6 +890,10 @@
             <span class="horario-dia">Sábado</span><span class="horario-hora">9:00 – 17:00 hrs</span>
             <span class="horario-dia">Domingo</span><span class="horario-hora">Cerrado</span>
           </div>
+          <section data-if="HORARIOS_HTML" class="horarios-seccion" style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(17,24,39,.08)">
+            <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:12px">Horarios</h3>
+            {{HORARIOS_HTML}}
+          </section>
           <a href="https://wa.me/5218711649285?text=Hola%2C%20quiero%20agendar%20una%20cita"
              class="btn-primary" style="margin-top:36px;color:var(--tinta)">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163A11.867 11.867 0 01.157 11.892C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.42c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
