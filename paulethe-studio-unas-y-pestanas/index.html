@@ -173,16 +173,17 @@ header{
   margin-bottom:24px;
 }
 .hero h1{
-  font-size:clamp(28px,6vw,56px);
-  line-height:1.08;
-  font-weight:400;
-  letter-spacing:-0.03em;
-  margin-bottom:14px;
-  max-width:620px;
+  font-size:clamp(22px,4.5vw,38px);
+  line-height:1.15;
+  font-weight:300;
+  letter-spacing:-0.015em;
+  margin-bottom:10px;
+  max-width:560px;
   padding:0 8px;
   font-family:var(--display);
+  opacity:0.98;
 }
-.hero h1 em{font-style:italic;color:var(--accent);font-weight:300}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:300;opacity:0.92}
 .hero-sub{
   font-size:14px;font-weight:400;
   color:var(--g600);
@@ -493,18 +494,19 @@ footer{
 .admin-hd h2{font-size:24px;font-weight:700;letter-spacing:-0.02em}
 
 /* ── Panel Admin — estilo iOS ── */
-.admin-topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,247,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.08)}
-.admin-topbar-inner{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
-.admin-brand{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--black)}
-.admin-close{width:30px;height:30px;border-radius:50%;background:rgba(120,120,128,0.12);border:none;color:var(--g600);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s}
-.admin-close:hover{transform:scale(1.08);background:rgba(120,120,128,0.2)}
-
-.seg-control{display:flex;background:rgba(120,120,128,0.12);border-radius:9px;padding:2px;margin-bottom:24px;gap:0}
-.seg-btn{flex:1;padding:8px 12px;border:none;background:transparent;font-size:13px;font-weight:600;color:var(--g600);cursor:pointer;border-radius:7px;transition:all .2s;letter-spacing:-0.01em}
-.seg-btn.active{background:var(--white);color:var(--black);box-shadow:0 3px 8px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06)}
-.admin-tab{display:none}
-.admin-tab.active{display:block;animation:fadeInTab .25s ease}
-@keyframes fadeInTab{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.admin-topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,247,0.88);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.08)}
+.admin-topbar-inner{max-width:720px;margin:0 auto;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+@media (min-width:768px){.admin-topbar-inner{padding:14px 24px;gap:16px}}
+.admin-brand{font-family:var(--display);font-size:15px;font-weight:600;letter-spacing:-0.01em;color:var(--black);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex-shrink:1}
+@media (min-width:768px){.admin-brand{font-size:18px}}
+.admin-actions{display:flex;gap:6px;flex-shrink:0}
+@media (min-width:768px){.admin-actions{gap:10px}}
+.admin-btn{padding:7px 12px;border-radius:100px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;letter-spacing:-0.01em;line-height:1}
+@media (min-width:768px){.admin-btn{padding:9px 18px;font-size:13px}}
+.admin-btn-out{background:transparent;border:1px solid rgba(0,0,0,0.15);color:var(--black)}
+.admin-btn-out:hover{background:rgba(0,0,0,0.04)}
+.admin-btn-fill{background:var(--black);border:1px solid var(--black);color:var(--white)}
+.admin-btn-fill:hover{background:#2a2a2a}
 
 .ios-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
 .ios-stat{background:var(--white);border-radius:14px;padding:16px 8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
@@ -784,9 +786,9 @@ footer{
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> 5⭐ en múltiples reseñas — tus clientas confían en ti. Ese rating perfecto demuestra consistencia y calidad en cada servicio</div>
-<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Sin sitio web, pierdes clientes que buscan agendar en línea 24/7 y desconocen tus servicios, horarios y ubicación exacta</div>
-<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Este sitio web incluye galería de trabajos, reservas automáticas por WhatsApp y calendario visible — convierte visitantes en clientas sin que dejes el estudio</div></div>
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Calificación perfecta de 5 estrellas con múltiples reseñas en Google Maps — tus clientas te recomiendan sin reservas</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> No cuentas con sitio web ni sistema de reservas online, lo que dificulta que nuevas clientas te encuentren o agenden sin contacto directo</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web profesional con reservas 24/7 y integración de WhatsApp Business capturaría consultas automáticas, confirmaría citas sin perder mensajes y te permitiría mostrar tu portafolio para atraer más clientas de Culiacán</div></div>
     </div>
   </section>
 
@@ -947,50 +949,22 @@ footer{
   <header class="admin-topbar">
     <div class="admin-topbar-inner">
       <div class="admin-brand" id="adminLogo"></div>
-      <button class="admin-close" onclick="showView('vHome')" aria-label="Ver sitio">✕</button>
+      <div class="admin-actions">
+        <button class="admin-btn admin-btn-out" onclick="showView('vHome')">Ver sitio</button>
+        <button class="admin-btn admin-btn-fill" onclick="showView('vForm')">+ Nueva clienta</button>
+      </div>
     </div>
   </header>
   <div class="admin-wrap">
-    <!-- Segmented control tipo iOS -->
-    <div class="seg-control" role="tablist">
-      <button class="seg-btn active" data-tab="expedientes" onclick="switchAdminTab('expedientes')">Expedientes</button>
-      <button class="seg-btn" data-tab="datos" onclick="switchAdminTab('datos')">Mis datos</button>
+    <div class="ios-stats">
+      <div class="ios-stat"><div class="ios-stat-n" id="stTotal">0</div><div class="ios-stat-l">Clientas</div></div>
+      <div class="ios-stat"><div class="ios-stat-n" id="stVisits">0</div><div class="ios-stat-l">Visitas</div></div>
+      <div class="ios-stat"><div class="ios-stat-n" id="stMonth">0</div><div class="ios-stat-l">Este mes</div></div>
     </div>
-
-    <!-- Tab: Expedientes -->
-    <div id="tab-expedientes" class="admin-tab active">
-      <div class="ios-stats">
-        <div class="ios-stat"><div class="ios-stat-n" id="stTotal">0</div><div class="ios-stat-l">Clientas</div></div>
-        <div class="ios-stat"><div class="ios-stat-n" id="stVisits">0</div><div class="ios-stat-l">Visitas</div></div>
-        <div class="ios-stat"><div class="ios-stat-n" id="stMonth">0</div><div class="ios-stat-l">Este mes</div></div>
-      </div>
-      <div class="ios-search-wrap">
-        <input class="ios-search" type="text" placeholder="🔍 Buscar clienta..." oninput="renderList(this.value)" maxlength="100">
-      </div>
-      <div id="clientList"></div>
-      <button class="ios-fab" onclick="showView('vForm')" aria-label="Agregar clienta">+</button>
+    <div class="ios-search-wrap">
+      <input class="ios-search" type="text" placeholder="🔍 Buscar clienta..." oninput="renderList(this.value)" maxlength="100">
     </div>
-
-    <!-- Tab: Mis datos (perfil del negocio) -->
-    <div id="tab-datos" class="admin-tab">
-      <div class="ios-card">
-        <div class="ios-card-hd">Negocio</div>
-        <div class="ios-row"><span class="ios-row-l">Nombre</span><span class="ios-row-v" id="dNombre">—</span></div>
-        <div class="ios-row"><span class="ios-row-l">Ciudad</span><span class="ios-row-v" id="dCiudad">—</span></div>
-        <div class="ios-row last"><span class="ios-row-l">Dirección</span><span class="ios-row-v" id="dDireccion">—</span></div>
-      </div>
-      <div class="ios-card">
-        <div class="ios-card-hd">Contacto</div>
-        <div class="ios-row"><span class="ios-row-l">Teléfono</span><span class="ios-row-v" id="dTel">—</span></div>
-        <div class="ios-row"><span class="ios-row-l">WhatsApp</span><a class="ios-row-v ios-link" id="dWa" href="#" target="_blank">Abrir chat</a></div>
-        <div class="ios-row last"><span class="ios-row-l">Horario</span><span class="ios-row-v" id="dHorario">—</span></div>
-      </div>
-      <div class="ios-card">
-        <div class="ios-card-hd">Sitio web</div>
-        <div class="ios-row"><span class="ios-row-l">Modo</span><span class="ios-row-v" id="dModo">Demo</span></div>
-        <div class="ios-row last"><span class="ios-row-l">Versión</span><span class="ios-row-v">Nova IA Studio · v1.0</span></div>
-      </div>
-    </div>
+    <div id="clientList"></div>
   </div>
 </div>
 
@@ -1183,7 +1157,7 @@ footer{
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
   nombre:        "Paulethe studio uñas y pestañas",
-  tagline:       "Paulethe Studio, el referente en pestañas y uñas de Culiacán. Con 5⭐ en 26 reseñas, tus clientas te recomiendan sin dudarlo. Bienvenida a tu sitio web personalizado.",
+  tagline:       "Paulethe Studio lleva el arte de pestañas y uñas a Culiacán con excelencia. Diseño, técnica y belleza en un solo lugar.",
   ciudad:        "Culiacán Rosales",
   direccion:     "Fraccionamiento altaria frente cedis de terecita, Estación de Murcia 2752, Panteón Jardines del Humaya, La Costera, 80295 Culiacán Rosales, Sin., México",
   tel:           "526674020884",
@@ -1440,7 +1414,24 @@ function submitForm(){
 }
 
 // ── ADMIN ─────────────────────────────────────────────────────────────
-function renderAdmin(){const cl=db.get();const now=new Date();document.getElementById('stTotal').textContent=cl.length;document.getElementById('stVisits').textContent=cl.reduce((a,c)=>a+(c.visits||[]).length,0);document.getElementById('stMonth').textContent=cl.filter(c=>{const d=new Date(c.created_at);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();}).length;renderList('');}
+function renderAdmin(){const cl=db.get();const now=new Date();document.getElementById('stTotal').textContent=cl.length;document.getElementById('stVisits').textContent=cl.reduce((a,c)=>a+(c.visits||[]).length,0);document.getElementById('stMonth').textContent=cl.filter(c=>{const d=new Date(c.created_at);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();}).length;renderList('');poblarMisDatos();}
+
+// Panel iOS: switch entre tabs "Expedientes" y "Mis datos"
+function switchAdminTab(tab){
+  document.querySelectorAll('.seg-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  const el=document.getElementById('tab-'+tab); if(el)el.classList.add('active');
+}
+
+// Poblar sección "Mis datos" con los datos del negocio (del CONFIG C).
+function poblarMisDatos(){
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v||'—'};
+  set('dNombre',C.nombre); set('dCiudad',C.ciudad); set('dDireccion',C.direccion);
+  set('dTel',C.tel); set('dHorario',C.horario);
+  const wa=document.getElementById('dWa');
+  if(wa && C.wa){wa.href='https://wa.me/'+String(C.wa).replace(/\D/g,'');wa.textContent='+'+String(C.wa).replace(/\D/g,'')}
+  set('dModo', C.modoDemo?'Demo activa':'Producción');
+}
 
 // SECURITY: esc() en todos los datos de usuario antes de insertarlos en innerHTML
 function renderList(q){
