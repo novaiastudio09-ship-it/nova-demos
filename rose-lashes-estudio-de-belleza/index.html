@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Rose &amp; Lashes | Estudio De Belleza · Durango</title>
+<title>Rose &amp; Lashes | Estudio de belleza · Durango</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmdcjuWzeCol6v3HeTVpvHZQqJVUy1B7wKSco9qNGDFIrjRHWb7awJDObvkGeihOudgiYjmGFdCcUFjiQ6CWAnkUI6KJCAWCx-fv3UpauA912t_027zgcMobp5GUDNYC2479UUoZw=w408-h544-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 4.9 · 49 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Rose &amp; Lashes acumula 4.9⭐ en múltiples reseñas — tus clientes son tus mejores embajadoras y recomiendan tu estudio con entusiasmo</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Aunque tienes sitio web, probablemente falta un sistema de reservas online integrado. Potenciales clientas no pueden agendar 24/7 sin contacto directo, lo que deja ventas en la mesa cuando duermes</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web con calendario de reservas 24/7 + WhatsApp Business integrado permite que tus clientas confirmen citas automáticamente, reciban recordatorios y tú despiertes con la agenda llena sin perder una sola oportunidad</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Rose &amp; Lashes | Estudio De Belleza",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Rose &amp; Lashes | Estudio de belleza",
+  tagline:       "Rose &amp; Lashes es el estudio de belleza de confianza en Durango. Con 4.9⭐ en 49 reseñas, tus clientes hablan por ti. Bienvenida a tu nueva presencia digital.",
   ciudad:        "Durango",
   direccion:     "Narciso 208, Jardines de Durango, 34200 Durango, Dgo., México",
   tel:           "526183187519",
