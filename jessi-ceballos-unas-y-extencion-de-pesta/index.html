@@ -173,16 +173,27 @@ header{
   margin-bottom:24px;
 }
 .hero h1{
-  font-size:clamp(28px,6vw,56px);
-  line-height:1.08;
+  font-size:clamp(38px,7.5vw,84px);
+  line-height:1.02;
   font-weight:400;
-  letter-spacing:-0.03em;
-  margin-bottom:14px;
-  max-width:620px;
-  padding:0 8px;
+  letter-spacing:-0.035em;
+  margin-bottom:16px;
+  max-width:820px;
+  padding:0 4px;
   font-family:var(--display);
+  color:#FFFFFF;
+  text-shadow:0 2px 40px rgba(0,0,0,0.4);
 }
-.hero h1 em{font-style:italic;color:var(--accent);font-weight:300}
+.hero h1 em{
+  font-style:italic;
+  color:var(--accent);
+  font-weight:400;
+  letter-spacing:-0.02em;
+  display:inline-block;
+  padding:0 0.04em;
+}
+/* Micro-refinamiento tipográfico: opentype features del serif */
+.hero h1{font-feature-settings:'liga' 1,'kern' 1,'dlig' 1;font-variant-ligatures:common-ligatures discretionary-ligatures}
 .hero-sub{
   font-size:14px;font-weight:400;
   color:var(--g600);
@@ -493,18 +504,26 @@ footer{
 .admin-hd h2{font-size:24px;font-weight:700;letter-spacing:-0.02em}
 
 /* ── Panel Admin — estilo iOS ── */
-.admin-topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,247,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.08)}
-.admin-topbar-inner{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
-.admin-brand{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--black)}
-.admin-close{width:30px;height:30px;border-radius:50%;background:rgba(120,120,128,0.12);border:none;color:var(--g600);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s}
-.admin-close:hover{transform:scale(1.08);background:rgba(120,120,128,0.2)}
-
-.seg-control{display:flex;background:rgba(120,120,128,0.12);border-radius:9px;padding:2px;margin-bottom:24px;gap:0}
-.seg-btn{flex:1;padding:8px 12px;border:none;background:transparent;font-size:13px;font-weight:600;color:var(--g600);cursor:pointer;border-radius:7px;transition:all .2s;letter-spacing:-0.01em}
-.seg-btn.active{background:var(--white);color:var(--black);box-shadow:0 3px 8px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06)}
-.admin-tab{display:none}
-.admin-tab.active{display:block;animation:fadeInTab .25s ease}
-@keyframes fadeInTab{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.admin-topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,247,0.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.08)}
+/* Mobile: brand arriba, botones abajo en fila completa (2 columnas) */
+.admin-topbar-inner{max-width:720px;margin:0 auto;padding:10px 14px 12px;display:flex;flex-direction:column;gap:8px}
+.admin-brand{font-family:var(--display);font-size:15px;font-weight:500;letter-spacing:-0.01em;color:var(--black);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2}
+.admin-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+.admin-btn{padding:9px 12px;border-radius:100px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap;letter-spacing:-0.01em;line-height:1;text-align:center}
+.admin-btn-out{background:transparent;border:1px solid rgba(0,0,0,0.15);color:var(--black)}
+.admin-btn-out:hover,.admin-btn-out:active{background:rgba(0,0,0,0.04)}
+.admin-btn-fill{background:var(--black);border:1px solid var(--black);color:var(--white)}
+.admin-btn-fill:hover,.admin-btn-fill:active{background:#2a2a2a}
+/* PC: layout horizontal con brand izq y botones a la derecha */
+@media (min-width:640px){
+  .admin-topbar-inner{flex-direction:row;justify-content:space-between;align-items:center;padding:14px 24px;gap:16px}
+  .admin-brand{text-align:left;font-size:18px;font-weight:600;flex:1;min-width:0}
+  .admin-actions{display:flex;grid-template-columns:none;width:auto;gap:10px;flex-shrink:0}
+  .admin-btn{padding:9px 18px}
+}
+/* Compensar altura extra del topbar en mobile — el wrap necesita más padding-top */
+.admin-wrap{padding-top:96px}
+@media (min-width:640px){.admin-wrap{padding-top:88px}}
 
 .ios-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
 .ios-stat{background:var(--white);border-radius:14px;padding:16px 8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
@@ -740,15 +759,20 @@ footer{
 
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
-  header{padding:14px 20px}
+  header{padding:12px 14px;gap:8px}
+  .logo{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex-shrink:1}
+  .nav-btns{gap:6px;flex-shrink:0}
+  .nav-btns .btn-sm{padding:7px 10px;font-size:12px;white-space:nowrap}
   .igrid,.vgrid,.gallery-grid{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr 1fr}
   .srv-grid{grid-template-columns:1fr 1fr}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn-fill,.hero-actions .btn-out{text-align:center}
-  .nav-btns .btn-sm:first-child{display:none}
   .about-strip{flex-direction:column;gap:40px}
   .map-placeholder{width:100%;min-width:unset}
+}
+@media(max-width:380px){
+  .nav-btns .btn-sm{padding:6px 8px;font-size:11px}
 }
 </style>
 </head>
@@ -784,9 +808,9 @@ footer{
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Tu rating de 4.8⭐ con múltiples reseñas refleja que tus clientas confían en tu trabajo y te recomiendan. Eso es oro en un nicho competitivo.</div>
-<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> No cuentas con sitio web ni sistema de reservas online. Tus clientas no pueden agendar 24/7 ni confirmar citas sin depender de mensajes manuales.</div>
-<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web con reservas 24/7 integradas + WhatsApp Business automático. Tus clientas ven disponibilidad en tiempo real, agendán sin esperar respuesta, y tú recibes confirmaciones automáticas. Cero mensajes perdidos, más citas confirmadas.</div></div>
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> 4.8 estrellas con múltiples reseñas — tus clientes te recomiendan constantemente y confían en tu trabajo</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> No tienes sitio web ni sistema de reservas en línea, lo que obliga a tus clientas a llamar o buscar por redes sociales</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web con reservas 24/7 + botón de WhatsApp integrado permite que agenden en cualquier momento sin perder clientes por falta de respuesta inmediata</div></div>
     </div>
   </section>
 
@@ -947,50 +971,22 @@ footer{
   <header class="admin-topbar">
     <div class="admin-topbar-inner">
       <div class="admin-brand" id="adminLogo"></div>
-      <button class="admin-close" onclick="showView('vHome')" aria-label="Ver sitio">✕</button>
+      <div class="admin-actions">
+        <button class="admin-btn admin-btn-out" onclick="showView('vHome')">Ver sitio</button>
+        <button class="admin-btn admin-btn-fill" onclick="showView('vForm')">+ Nueva clienta</button>
+      </div>
     </div>
   </header>
   <div class="admin-wrap">
-    <!-- Segmented control tipo iOS -->
-    <div class="seg-control" role="tablist">
-      <button class="seg-btn active" data-tab="expedientes" onclick="switchAdminTab('expedientes')">Expedientes</button>
-      <button class="seg-btn" data-tab="datos" onclick="switchAdminTab('datos')">Mis datos</button>
+    <div class="ios-stats">
+      <div class="ios-stat"><div class="ios-stat-n" id="stTotal">0</div><div class="ios-stat-l">Clientas</div></div>
+      <div class="ios-stat"><div class="ios-stat-n" id="stVisits">0</div><div class="ios-stat-l">Visitas</div></div>
+      <div class="ios-stat"><div class="ios-stat-n" id="stMonth">0</div><div class="ios-stat-l">Este mes</div></div>
     </div>
-
-    <!-- Tab: Expedientes -->
-    <div id="tab-expedientes" class="admin-tab active">
-      <div class="ios-stats">
-        <div class="ios-stat"><div class="ios-stat-n" id="stTotal">0</div><div class="ios-stat-l">Clientas</div></div>
-        <div class="ios-stat"><div class="ios-stat-n" id="stVisits">0</div><div class="ios-stat-l">Visitas</div></div>
-        <div class="ios-stat"><div class="ios-stat-n" id="stMonth">0</div><div class="ios-stat-l">Este mes</div></div>
-      </div>
-      <div class="ios-search-wrap">
-        <input class="ios-search" type="text" placeholder="🔍 Buscar clienta..." oninput="renderList(this.value)" maxlength="100">
-      </div>
-      <div id="clientList"></div>
-      <button class="ios-fab" onclick="showView('vForm')" aria-label="Agregar clienta">+</button>
+    <div class="ios-search-wrap">
+      <input class="ios-search" type="text" placeholder="🔍 Buscar clienta..." oninput="renderList(this.value)" maxlength="100">
     </div>
-
-    <!-- Tab: Mis datos (perfil del negocio) -->
-    <div id="tab-datos" class="admin-tab">
-      <div class="ios-card">
-        <div class="ios-card-hd">Negocio</div>
-        <div class="ios-row"><span class="ios-row-l">Nombre</span><span class="ios-row-v" id="dNombre">—</span></div>
-        <div class="ios-row"><span class="ios-row-l">Ciudad</span><span class="ios-row-v" id="dCiudad">—</span></div>
-        <div class="ios-row last"><span class="ios-row-l">Dirección</span><span class="ios-row-v" id="dDireccion">—</span></div>
-      </div>
-      <div class="ios-card">
-        <div class="ios-card-hd">Contacto</div>
-        <div class="ios-row"><span class="ios-row-l">Teléfono</span><span class="ios-row-v" id="dTel">—</span></div>
-        <div class="ios-row"><span class="ios-row-l">WhatsApp</span><a class="ios-row-v ios-link" id="dWa" href="#" target="_blank">Abrir chat</a></div>
-        <div class="ios-row last"><span class="ios-row-l">Horario</span><span class="ios-row-v" id="dHorario">—</span></div>
-      </div>
-      <div class="ios-card">
-        <div class="ios-card-hd">Sitio web</div>
-        <div class="ios-row"><span class="ios-row-l">Modo</span><span class="ios-row-v" id="dModo">Demo</span></div>
-        <div class="ios-row last"><span class="ios-row-l">Versión</span><span class="ios-row-v">Nova IA Studio · v1.0</span></div>
-      </div>
-    </div>
+    <div id="clientList"></div>
   </div>
 </div>
 
@@ -1183,7 +1179,7 @@ footer{
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
   nombre:        "Jessi Ceballos Uñas y extencion de pestañas.",
-  tagline:       "Jessi Ceballos trae el toque experto de uñas y extensión de pestañas a Nuevo Ideal. Con 4.8 estrellas, tus clientas ya confían en ti—ahora que conozcan cómo agendar desde casa.",
+  tagline:       "Jessi Ceballos es tu referencia en Nuevo Ideal para uñas impecables y extensión de pestañas. 4.8 estrellas que hablan por sí solas.",
   ciudad:        "Nuevo Ideal",
   direccion:     "34420, Miguel Hidalgo y Costilla, Zona Centro, 34410 Nuevo Ideal, Dgo., México",
   tel:           "526771118842",
@@ -1440,7 +1436,24 @@ function submitForm(){
 }
 
 // ── ADMIN ─────────────────────────────────────────────────────────────
-function renderAdmin(){const cl=db.get();const now=new Date();document.getElementById('stTotal').textContent=cl.length;document.getElementById('stVisits').textContent=cl.reduce((a,c)=>a+(c.visits||[]).length,0);document.getElementById('stMonth').textContent=cl.filter(c=>{const d=new Date(c.created_at);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();}).length;renderList('');}
+function renderAdmin(){const cl=db.get();const now=new Date();document.getElementById('stTotal').textContent=cl.length;document.getElementById('stVisits').textContent=cl.reduce((a,c)=>a+(c.visits||[]).length,0);document.getElementById('stMonth').textContent=cl.filter(c=>{const d=new Date(c.created_at);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();}).length;renderList('');poblarMisDatos();}
+
+// Panel iOS: switch entre tabs "Expedientes" y "Mis datos"
+function switchAdminTab(tab){
+  document.querySelectorAll('.seg-btn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  const el=document.getElementById('tab-'+tab); if(el)el.classList.add('active');
+}
+
+// Poblar sección "Mis datos" con los datos del negocio (del CONFIG C).
+function poblarMisDatos(){
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v||'—'};
+  set('dNombre',C.nombre); set('dCiudad',C.ciudad); set('dDireccion',C.direccion);
+  set('dTel',C.tel); set('dHorario',C.horario);
+  const wa=document.getElementById('dWa');
+  if(wa && C.wa){wa.href='https://wa.me/'+String(C.wa).replace(/\D/g,'');wa.textContent='+'+String(C.wa).replace(/\D/g,'')}
+  set('dModo', C.modoDemo?'Demo activa':'Producción');
+}
 
 // SECURITY: esc() en todos los datos de usuario antes de insertarlos en innerHTML
 function renderList(q){
