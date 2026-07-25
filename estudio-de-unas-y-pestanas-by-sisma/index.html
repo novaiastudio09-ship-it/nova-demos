@@ -128,69 +128,96 @@ header{
 }
 .btn-out:hover{border-color:var(--black);transform:translateY(-2px)}
 
-/* ── HERO ── */
+/* ── HERO — foto profesional como banner de fondo ── */
 .hero{
   min-height:auto;
   display:flex;flex-direction:column;
   justify-content:center;align-items:center;
   text-align:center;
-  padding:100px 24px 70px;
-  background:linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+  padding:88px 20px 72px;
+  color:#FAF9F7;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.72) 100%),
+    var(--hero-bg, url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&auto=format&fit=crop')) center/cover no-repeat;
   position:relative;overflow:hidden;
 }
-@media (min-width: 768px) { .hero { padding: 120px 24px 90px; } }
+@media (min-width: 768px) { .hero { padding: 128px 32px 96px; } }
 .hero::before{
   content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 50% 30%, rgba(196,168,130,0.08) 0%, transparent 70%);
+  background:radial-gradient(ellipse 60% 40% at 50% 40%, rgba(196,168,130,0.15) 0%, transparent 70%);
   pointer-events:none;
 }
+.hero .hero-sub{color:rgba(250,249,247,0.85)}
+.hero .hero-tag{background:rgba(196,168,130,0.18);border-color:rgba(196,168,130,0.4);color:#E8D5B7}
+
+/* ── Rating pill · Análisis · Testimonios (secciones LLM) ── */
+.rating-hero-badge{text-align:center;padding:16px 20px;background:linear-gradient(180deg,transparent,rgba(196,168,130,0.06))}
+.rating-pill{display:inline-block;background:var(--black);color:var(--cream);padding:9px 18px;border-radius:100px;font-size:13px;font-weight:500;letter-spacing:.02em}
+.analisis-neg{padding:56px 20px;background:#F5F4F2}
+@media (min-width: 768px) { .analisis-neg { padding:80px 32px } }
+.an-wrap{max-width:820px;margin:0 auto}
+.an-title{font-size:clamp(22px,4.5vw,32px);font-weight:600;color:var(--black);margin-bottom:6px;letter-spacing:-0.02em;line-height:1.15}
+.an-sub{color:var(--g600);font-size:13px;margin-bottom:28px;letter-spacing:.01em}
+.testim-seccion{padding:56px 20px;background:var(--cream)}
+@media (min-width: 768px) { .testim-seccion { padding:80px 32px } }
+.ts-wrap{max-width:1100px;margin:0 auto}
+.ts-title{font-size:clamp(22px,4.5vw,32px);font-weight:600;color:var(--black);margin-bottom:32px;text-align:center;letter-spacing:-0.02em;line-height:1.15}
 .hero-tag{
   display:inline-block;
-  font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;
+  font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
   color:var(--accent);
   background:rgba(196,168,130,0.1);
   border:1px solid rgba(196,168,130,0.25);
   border-radius:100px;
-  padding:7px 20px;
-  margin-bottom:32px;
+  padding:6px 16px;
+  margin-bottom:24px;
 }
 .hero h1{
-  font-size:clamp(42px,7vw,88px);
-  line-height:1.03;
-  font-weight:700;
+  font-size:clamp(28px,6vw,56px);
+  line-height:1.08;
+  font-weight:400;
   letter-spacing:-0.03em;
-  margin-bottom:24px;
-  max-width:780px;
+  margin-bottom:14px;
+  max-width:620px;
+  padding:0 8px;
+  font-family:var(--display);
 }
-.hero h1 em{font-style:italic;color:var(--accent);font-weight:400}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:300}
 .hero-sub{
-  font-size:15px;font-weight:400;
+  font-size:14px;font-weight:400;
   color:var(--g600);
-  margin-bottom:52px;
-  line-height:1.7;
-  max-width:480px;
+  margin-bottom:36px;
+  line-height:1.6;
+  max-width:420px;
   letter-spacing:0.01em;
+  padding:0 8px;
 }
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+@media (min-width: 768px) { .hero-sub { font-size:15px; margin-bottom:44px; } }
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding:0 8px}
+@media (min-width: 768px) { .hero-actions { gap:16px } }
 
-/* ── SECTIONS ── */
+/* ── SECTIONS — mobile-first ── */
 .section-label{
   display:inline-block;
-  font-size:10px;font-weight:600;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:14px;
+  font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;
 }
 .section-title{
-  font-size:clamp(28px,4vw,44px);
-  font-weight:700;letter-spacing:-0.025em;
-  margin-bottom:56px;
+  font-size:clamp(24px,5vw,40px);
+  font-weight:700;letter-spacing:-0.02em;
+  margin-bottom:36px;
   text-align:center;
+  line-height:1.15;
+  padding:0 12px;
 }
+@media (min-width: 768px) { .section-title { margin-bottom:52px } }
 
-/* ── SERVICES ── */
+/* ── SERVICES — más compacto mobile ── */
 .services{
-  padding:100px 24px;
+  padding:64px 20px;
   background:var(--cream);
 }
+@media (min-width: 768px) { .services { padding:96px 32px } }
 .services-inner{text-align:center}
 .srv-grid{
   display:grid;
@@ -460,9 +487,46 @@ footer{
 .login-wrap .sub{font-size:11px;color:var(--g400);margin-bottom:44px;letter-spacing:.12em}
 
 /* ── ADMIN ── */
-.admin-wrap{max-width:800px;margin:0 auto;padding:100px 24px 60px}
+.admin-wrap{max-width:640px;margin:0 auto;padding:88px 16px 96px}
+@media (min-width:768px){.admin-wrap{padding:104px 24px 60px}}
 .admin-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:12px}
 .admin-hd h2{font-size:24px;font-weight:700;letter-spacing:-0.02em}
+
+/* ── Panel Admin — estilo iOS ── */
+.admin-topbar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,249,247,0.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid rgba(0,0,0,0.08)}
+.admin-topbar-inner{max-width:640px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.admin-brand{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-0.01em;color:var(--black)}
+.admin-close{width:30px;height:30px;border-radius:50%;background:rgba(120,120,128,0.12);border:none;color:var(--g600);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+.admin-close:hover{transform:scale(1.08);background:rgba(120,120,128,0.2)}
+
+.seg-control{display:flex;background:rgba(120,120,128,0.12);border-radius:9px;padding:2px;margin-bottom:24px;gap:0}
+.seg-btn{flex:1;padding:8px 12px;border:none;background:transparent;font-size:13px;font-weight:600;color:var(--g600);cursor:pointer;border-radius:7px;transition:all .2s;letter-spacing:-0.01em}
+.seg-btn.active{background:var(--white);color:var(--black);box-shadow:0 3px 8px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.06)}
+.admin-tab{display:none}
+.admin-tab.active{display:block;animation:fadeInTab .25s ease}
+@keyframes fadeInTab{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.ios-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:24px}
+.ios-stat{background:var(--white);border-radius:14px;padding:16px 8px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.ios-stat-n{font-size:22px;font-weight:700;color:var(--black);letter-spacing:-0.02em;line-height:1.1}
+.ios-stat-l{font-size:11px;color:var(--g600);margin-top:4px;letter-spacing:0.01em;text-transform:none}
+
+.ios-search-wrap{margin-bottom:20px}
+.ios-search{width:100%;padding:11px 16px;background:rgba(120,120,128,0.10);border:none;border-radius:12px;font-size:15px;color:var(--black);outline:none;transition:background .15s}
+.ios-search:focus{background:rgba(120,120,128,0.14)}
+.ios-search::placeholder{color:var(--g400)}
+
+.ios-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--black);color:var(--white);border:none;font-size:28px;font-weight:300;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.24);display:flex;align-items:center;justify-content:center;z-index:40;transition:transform .15s}
+.ios-fab:hover{transform:scale(1.05)}
+.ios-fab:active{transform:scale(0.96)}
+
+.ios-card{background:var(--white);border-radius:14px;margin-bottom:20px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.ios-card-hd{padding:12px 16px 6px;font-size:11px;font-weight:600;color:var(--g600);text-transform:uppercase;letter-spacing:.08em}
+.ios-row{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-top:0.5px solid rgba(0,0,0,0.06);gap:12px;min-height:44px}
+.ios-row.last{border-bottom:none}
+.ios-row-l{font-size:15px;color:var(--black);font-weight:400;flex-shrink:0}
+.ios-row-v{font-size:15px;color:var(--g600);text-align:right;word-break:break-word}
+.ios-link{color:var(--accent);text-decoration:none;font-weight:500}
 .stats{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:12px;margin-bottom:32px;
@@ -702,7 +766,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="background-image: linear-gradient(rgba(10,10,10,0.55), rgba(10,10,10,0.35)), url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmW7mXkSphDj5LcmyO2-hVJeI874UYf3aRxTz3hVzbfAL5x20qrnqoKnX4in2aWm0fGtW5e9LJFxDw26takpH0a4-Xkh72VFZpKpCamVjCSOsdS6ER9soOWMp1dzb4XtvIm=w408-h306-k-no'); background-size: cover; background-position: center;">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmW7mXkSphDj5LcmyO2-hVJeI874UYf3aRxTz3hVzbfAL5x20qrnqoKnX4in2aWm0fGtW5e9LJFxDw26takpH0a4-Xkh72VFZpKpCamVjCSOsdS6ER9soOWMp1dzb4XtvIm=w408-h306-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -712,19 +776,17 @@ footer{
     </div>
   </section>
 
-  <section class="rating-hero-badge" style="text-align:center;padding:12px 20px;background:linear-gradient(180deg,transparent,rgba(196,168,130,0.08));">
-    <div style="display:inline-block;background:#0A0A0A;color:#FAF9F7;padding:8px 20px;border-radius:100px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.02em;">
-      ⭐ 5 · 35 reseñas en Google
-    </div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 5 · 35 reseñas en Google</div>
   </section>
 
-  <section class="analisis-neg" style="padding:80px 20px;background:#F5F4F2;">
-    <div style="max-width:900px;margin:0 auto;">
-      <h2 style="font-family:'Inter',serif;font-weight:300;font-size:2rem;color:#0A0A0A;margin-bottom:8px;letter-spacing:-0.02em;">Análisis de tu negocio</h2>
-      <p style="color:#6B6660;font-size:14px;margin-bottom:32px;">Basado en las reseñas reales de tus clientas en Google</p>
-      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Perfecto 5⭐ en múltiples reseñas — tus clientas en Cabo te recomiendan sin dudas. La confianza está ganada.</div>
-<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Sin sitio web visible, pierdes consultas de clientes que buscan online. No tienes sistema de reservas 24/7 ni presencia digital para captar turismo en Cabo.</div>
-<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio con galería de trabajos, reservas automáticas por WhatsApp Business y confirmación de citas 24/7 te trae clientas sin que contestes el teléfono.</div></div>
+  <section class="analisis-neg">
+    <div class="an-wrap">
+      <h2 class="an-title">Análisis de tu negocio</h2>
+      <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Perfil impecable con 5⭐ en múltiples reseñas — tus clientas te recomiendan sin dudas. En Cabo San Lucas, esa consistencia es oro.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> No tienes sitio web ni sistema de reservas online — los clientes potenciales no pueden agendar 24/7 sin buscar tu teléfono o visitar en persona.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio con reservas integradas + WhatsApp Business automático te ahorra llamadas, permite agendar a cualquier hora, y tus clientas reciben confirmación al instante sin que pierdas un mensaje.</div></div>
     </div>
   </section>
 
@@ -882,22 +944,53 @@ footer{
 
 <!-- ADMIN -->
 <div id="vAdmin" class="view">
-  <header>
-    <div class="logo" style="font-size:15px;font-weight:600" id="adminLogo"></div>
-    <div class="nav-btns">
-      <button class="btn-sm out" onclick="showView('vHome')">Ver sitio</button>
-      <button class="btn-sm fill" onclick="showView('vForm')">+ Nueva clienta</button>
+  <header class="admin-topbar">
+    <div class="admin-topbar-inner">
+      <div class="admin-brand" id="adminLogo"></div>
+      <button class="admin-close" onclick="showView('vHome')" aria-label="Ver sitio">✕</button>
     </div>
   </header>
   <div class="admin-wrap">
-    <div class="admin-hd"><h2>Expedientes</h2></div>
-    <div class="stats">
-      <div class="stat"><span class="stat-n" id="stTotal">0</span><span class="stat-l">Clientas</span></div>
-      <div class="stat"><span class="stat-n" id="stVisits">0</span><span class="stat-l">Visitas</span></div>
-      <div class="stat"><span class="stat-n" id="stMonth">0</span><span class="stat-l">Este mes</span></div>
+    <!-- Segmented control tipo iOS -->
+    <div class="seg-control" role="tablist">
+      <button class="seg-btn active" data-tab="expedientes" onclick="switchAdminTab('expedientes')">Expedientes</button>
+      <button class="seg-btn" data-tab="datos" onclick="switchAdminTab('datos')">Mis datos</button>
     </div>
-    <input class="search" type="text" placeholder="Buscar por nombre o teléfono..." oninput="renderList(this.value)" maxlength="100">
-    <div id="clientList"></div>
+
+    <!-- Tab: Expedientes -->
+    <div id="tab-expedientes" class="admin-tab active">
+      <div class="ios-stats">
+        <div class="ios-stat"><div class="ios-stat-n" id="stTotal">0</div><div class="ios-stat-l">Clientas</div></div>
+        <div class="ios-stat"><div class="ios-stat-n" id="stVisits">0</div><div class="ios-stat-l">Visitas</div></div>
+        <div class="ios-stat"><div class="ios-stat-n" id="stMonth">0</div><div class="ios-stat-l">Este mes</div></div>
+      </div>
+      <div class="ios-search-wrap">
+        <input class="ios-search" type="text" placeholder="🔍 Buscar clienta..." oninput="renderList(this.value)" maxlength="100">
+      </div>
+      <div id="clientList"></div>
+      <button class="ios-fab" onclick="showView('vForm')" aria-label="Agregar clienta">+</button>
+    </div>
+
+    <!-- Tab: Mis datos (perfil del negocio) -->
+    <div id="tab-datos" class="admin-tab">
+      <div class="ios-card">
+        <div class="ios-card-hd">Negocio</div>
+        <div class="ios-row"><span class="ios-row-l">Nombre</span><span class="ios-row-v" id="dNombre">—</span></div>
+        <div class="ios-row"><span class="ios-row-l">Ciudad</span><span class="ios-row-v" id="dCiudad">—</span></div>
+        <div class="ios-row last"><span class="ios-row-l">Dirección</span><span class="ios-row-v" id="dDireccion">—</span></div>
+      </div>
+      <div class="ios-card">
+        <div class="ios-card-hd">Contacto</div>
+        <div class="ios-row"><span class="ios-row-l">Teléfono</span><span class="ios-row-v" id="dTel">—</span></div>
+        <div class="ios-row"><span class="ios-row-l">WhatsApp</span><a class="ios-row-v ios-link" id="dWa" href="#" target="_blank">Abrir chat</a></div>
+        <div class="ios-row last"><span class="ios-row-l">Horario</span><span class="ios-row-v" id="dHorario">—</span></div>
+      </div>
+      <div class="ios-card">
+        <div class="ios-card-hd">Sitio web</div>
+        <div class="ios-row"><span class="ios-row-l">Modo</span><span class="ios-row-v" id="dModo">Demo</span></div>
+        <div class="ios-row last"><span class="ios-row-l">Versión</span><span class="ios-row-v">Nova IA Studio · v1.0</span></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1090,7 +1183,7 @@ footer{
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
   nombre:        "Estudio de uñas y Pestañas By Sisma",
-  tagline:       "Estudio de uñas y pestañas By Sisma en Cabo San Lucas: 5⭐ con 35 reseñas. Tu belleza es nuestra especialidad, bienvenida.",
+  tagline:       "Estudio By Sisma lleva la belleza de las pestañas a Cabo San Lucas con 5⭐ en todas las reseñas. Tu confianza merecida, ahora más accesible.",
   ciudad:        "Cabo San Lucas",
   direccion:     "Isla Monserrat Manzana 01 Lote 20, El Caribe, 23477 Cabo San Lucas, B.C.S., México",
   tel:           "526242621011",
