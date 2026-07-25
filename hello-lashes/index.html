@@ -164,32 +164,33 @@ header{
 .ts-title{font-size:clamp(22px,4.5vw,32px);font-weight:600;color:var(--black);margin-bottom:32px;text-align:center;letter-spacing:-0.02em;line-height:1.15}
 .hero-tag{
   display:inline-block;
-  font-size:9px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;
+  font-size:8px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
   color:var(--accent);
-  background:rgba(196,168,130,0.1);
-  border:1px solid rgba(196,168,130,0.25);
+  background:rgba(196,168,130,0.08);
+  border:1px solid rgba(196,168,130,0.2);
   border-radius:100px;
-  padding:6px 16px;
-  margin-bottom:24px;
+  padding:5px 14px;
+  margin-bottom:20px;
 }
 .hero h1{
-  font-size:clamp(32px,5.5vw,60px);
-  line-height:1.08;
+  font-size:clamp(24px,4vw,44px);
+  line-height:1.2;
   font-weight:300;
-  letter-spacing:-0.015em;
-  margin-bottom:20px;
-  max-width:760px;
+  letter-spacing:-0.01em;
+  margin:0 auto 18px;
+  max-width:600px;
   padding:0 4px;
   font-family:var(--display);
   color:#FFFFFF;
-  text-shadow:0 1px 20px rgba(0,0,0,0.25);
+  text-shadow:0 1px 16px rgba(0,0,0,0.22);
+  text-wrap:balance;
 }
 .hero h1 em{
   font-style:normal;
   color:#FFFFFF;
   font-weight:300;
-  letter-spacing:-0.015em;
-  display:inline-block;
+  letter-spacing:-0.01em;
+  display:inline;
   padding:0;
 }
 .hero-sub{
@@ -1258,8 +1259,8 @@ function applyConfig() {
   // Hero
   document.getElementById('hLogo').textContent = C.nombre;
   document.getElementById('heroTag').textContent = `${C.ciudad} · Belleza de precisión`;
-  const [p1, ...rest] = C.tagline.split(' ');
-  document.getElementById('heroTitle').innerHTML = `${esc(p1)}<br><em>${esc(rest.join(' '))}</em>`;
+  // Tagline en una sola línea; text-wrap:balance en CSS reparte natural.
+  document.getElementById('heroTitle').textContent = C.tagline;
   document.getElementById('heroSub').textContent = C.servicios.map(s=>s.nombre).join('  ·  ');
   // Botones WhatsApp — SECURITY: validar que wa solo tenga dígitos
   const waSafe = C.wa.replace(/\D/g,'');
