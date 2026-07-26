@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Luxlash Studio · Guadalupe Victoria</title>
+<title>LuxLash Studio · Guadalupe Victoria</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=wt7XqizlmQNB7YQ2L2Rikg&amp;cb_client=search.gws-prod.gps&amp;w=408&amp;h=240&amp;yaw=172.19403&amp;pitch=0&amp;thumbfov=100');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,11 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
-  </section>
+  
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
-    <div class="an-wrap">
-      <h2 class="an-title">Análisis de tu negocio</h2>
-      <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
-    </div>
-  </section>
+  
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1167,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Luxlash Studio",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "LuxLash Studio",
+  tagline:       "Bienvenida a LuxLash Studio, tu estudio de pestañas y uñas en Guadalupe Victoria",
   ciudad:        "Guadalupe Victoria",
   direccion:     "calle real 605 pte, El Hormiguero, 34707 Guadalupe Victoria, Dgo., México",
   tel:           "526761082795",
