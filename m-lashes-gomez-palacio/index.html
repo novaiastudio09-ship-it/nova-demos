@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkEFg5fmele3Dd-LCgiebL26jeQDLg7UNfhGJsIUDzjFAKGiJW4oTfWpip2XxWEBYnxOkXV5NT8EudqqhgQbdRVnZ4uABHUc5DG-I8Pr3eINL-um5po-RK1I_JL2DzsS9oY1sewDHyld9Q=w408-h509-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 4.8 · 20 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Tu rating de 4.8⭐ con múltiples reseñas demuestra que tus clientas te recomiendan constantemente — eso es excelente retención y boca a boca</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Tu perfil tiene sitio web, pero probablemente sin sistema de reservas online integrado ni gestión de mensajes centralizada — tus clientas aún llaman o escriben por WhatsApp sin confirmación automática</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web con reservas 24/7, confirmación automática por WhatsApp y recordatorio de citas reduce cancelaciones y deja tu teléfono libre para atender mejor en el salón</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1181,7 +1178,7 @@ footer{
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
   nombre:        "M Lashes Gómez Palacio",
-  tagline:       "{{HERO_COPY}}",
+  tagline:       "M Lashes Gómez Palacio es tu referencia en pestañas y extensiones en la ciudad. Con 4.8⭐ de recomendación, tus clientas confían en tu expertise.",
   ciudad:        "Gómez Palacio",
   direccion:     "C. Tlaxcala 119, Col. La Rosas, 35090 Gómez Palacio, Dgo., México",
   tel:           "528713333042",
