@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>St Lash Studio · La Paz</title>
+<title>ST Lash Studio · La Paz</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=9oUSI1z8IvA-rnHNrm7BTw&amp;cb_client=search.gws-prod.gps&amp;w=408&amp;h=240&amp;yaw=244.95381&amp;pitch=0&amp;thumbfov=100');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 4.9 · 12 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Tu reputación en La Paz es sólida: 4.9⭐ con múltiples reseñas significan que tus clientas te recomiendan activamente. Ese rating refleja consistencia en calidad y servicio.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Aunque tienes sitio web, es probable que no cuentes con sistema de reservas online integrado. Esto significa que potenciales clientas no pueden agendar 24/7 sin llamar o enviar mensajes manuales.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web con calendario de reservas integrado + WhatsApp Business automatizado permite que tus clientas confirmen citas en cualquier momento, reducen la fricción en tu agenda y capturas esas consultas nocturnas que hoy se pierden.</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "St Lash Studio",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "ST Lash Studio",
+  tagline:       "ST Lash Studio en La Paz te ofrece pestañas impecables con un rating de 4.9⭐. Bienvenida a tu nueva mirada.",
   ciudad:        "La Paz",
   direccion:     "Gral Juan Domínguez Cota 2415, La Rinconada, 23040 La Paz, B.C.S., México",
   tel:           "526121392584",
