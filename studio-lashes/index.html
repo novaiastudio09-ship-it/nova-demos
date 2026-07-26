@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Studio Lashes · Santiago de Querétaro</title>
+<title>Studio lashes · Santiago de Querétaro</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkXSw981zpzC96HITajtHYBmjwo53_3p0Z2OCc78kZ-ZRxyeFxiSu6nx8bzJ1e0RocLscWpHXITsDUyu7unIw8euJf8nz7NKA7MbsczwS9V1HhwbI9hzEWoJoAMhK9aHxkAx1qn2in06H8=w408-h307-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 5 · 14 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Perfecto 5⭐ en múltiples reseñas — tus clientas te recomiendan sin reservas. Eso es confianza genuina en Santiago de Querétaro.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Ya tienes sitio web, pero probablemente no tienes sistema de reservas online ni integración con WhatsApp Business — tus clientas aún agendan por teléfono o mensaje manual.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sistema de reservas 24/7 integrado con WhatsApp automático: confirmación instant, recordatorios, y tú despiertas con la agenda lista sin gestionar manualmente cada mensaje.</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Studio Lashes",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Studio lashes",
+  tagline:       "Studio Lashes en Santiago de Querétaro: 5⭐ en cada reseña. Volumen y calidad que hablan por ti.",
   ciudad:        "Santiago de Querétaro",
   direccion:     "C. Cielo Claro 105, Jardines de la Alborada, 76116 Santiago de Querétaro, Qro., México",
   tel:           "524427944115",
