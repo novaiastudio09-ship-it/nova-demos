@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Hs Lashes Estudio · Guamúchil</title>
+<title>Hs lashes estudio · Guamúchil</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm4iepoh5rmhkdGVS_QwG9pC7b-sWshQcyb53O3cey4wWUPFuD2e__3Nv2d1b1_vXQxh5pHOPkHoxNG-_QpeoJJz2_GrPeOjAr2vSc_bpWBbklvy56WGeA6KFT_raHI4YeqhI2GG4TI9NT9=w408-h448-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 4.9 · 13 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Tu rating de 4.9⭐ en múltiples reseñas es excepcional — demuestra que tus clientas están muy satisfechas con tu trabajo en extensiones y servicios de lashes</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Aunque tienes sitio web, probablemente no tienes un sistema de reservas integrado. Tus clientas podrían agendar 24/7 sin esperar respuesta por WhatsApp o teléfono</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un calendario online conectado a WhatsApp Business permite que las clientas vean disponibilidad real, confirmen citas automáticamente a cualquier hora, y reciban recordatorios sin saturar tu teléfono</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Hs Lashes Estudio",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Hs lashes estudio",
+  tagline:       "Hs Lashes Estudio en Guamúchil te espera con un rating 4.9⭐ y especialización en extensiones de pestañas. Bienvenida a tu belleza premium.",
   ciudad:        "Guamúchil",
   direccion:     "117 Av fco, Javier Mina, 81400 Guamúchil, Sin., México",
   tel:           "526731000931",

@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Lash Bar - Extensiones De Pestañas · La Paz</title>
+<title>Lash Bar - Extensiones de Pestañas · La Paz</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl2S-jjhIirPTttbK-oGFAdmmWaCKBNA6FHLrRnUwzWwf42dVLDWdzovynw8yVSyENCQqzLC5KgURFk27tWGHOa9Lc1hzWkQJpsnOIBopGCQYB-7qKsqX0eEQW7EPoWdkFnpeMnNA=w408-h408-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 4.8 · 11 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Rating de 4.8⭐ con múltiples reseñas demuestra que tus clientes confían en ti y te recomiendan. Mantienen una excelente reputación online.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Aunque tienes sitio web, es probable que no tengas sistema de reservas online integrado. Las clientas siguen teniendo que contactarte por teléfono o mensajes personales para agendar, perdiendo disponibilidad en horarios fuera de tu respuesta.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sitio web con calendario de reservas 24/7 + WhatsApp Business integrado permite que tus clientas agendan cuando quieren (madrugada, fin de semana) y reciban confirmación automática. Tú despiertas con la agenda llena sin perder un solo mensaje.</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Lash Bar - Extensiones De Pestañas",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Lash Bar - Extensiones de Pestañas",
+  tagline:       "Lash Bar en La Paz: extensiones de pestañas con rating 4.8⭐. Tu belleza, nuestra especialidad. Bienvenida.",
   ciudad:        "La Paz",
   direccion:     "Blvd. Forjadores entre Constituyentes de 1975 y Libramiento Santiago Oceguera, 8 de Octubre 1ra Secc, 23080 La Paz, B.C.S., México",
   tel:           "526122018903",
