@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Jimena Fermín Studio Lashes &amp; Brows · La Paz</title>
+<title>Jimena Fermín Studio LASHES &amp; BROWS · La Paz</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWljr8bTxxkNj-Uz_1-k2flRY5y2m0FLnoBpvm7YVL4G2p0sXI0Xm7od2CKwmNLACyVk5WkdaKrHuIysb0GwFkkkS-F0boLQx8YIp-BwNnR0dFYr3H2Nx3QeXk4HwkW5JEuOERPsTN9oA_fv=w408-h408-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 5 · 5 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Perfil impecable: 5 estrellas en todas tus reseñas. Tus clientas de La Paz te recomiendan sin dudarlo y confían en tu calidad.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Aunque tienes sitio web, probablemente no incluye sistema de reservas online ni integración directa con WhatsApp — haciendo que las clientas tengan que contactarte manualmente para agendar.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Con reservas 24/7 integradas en tu sitio + confirmación automática por WhatsApp, tus clientas agendarán mientras duermen y tú recibirás citas sin perder mensajes.</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Jimena Fermín Studio Lashes &amp; Brows",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Jimena Fermín Studio LASHES &amp; BROWS",
+  tagline:       "Jimena Fermín Studio lleva la excelencia en lashes y brows a La Paz. Con 5 estrellas y clientas satisfechas, es hora de llevarte al siguiente nivel digital.",
   ciudad:        "La Paz",
   direccion:     "Revolución de 1910 657, Esterito, 23020 La Paz, B.C.S., México",
   tel:           "526121394823",
