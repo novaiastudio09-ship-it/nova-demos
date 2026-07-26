@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Prolash Company · Durango</title>
+<title>PROLASH Company · Durango</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmnQQZz65KEsb9VYeCLqM0MRE1vbSEsWFbTqUmVDv-NTC1qXm3ORx5cPvYS_0DBj2J5lgMMrlzHtN1yaREX7cCELgWE0Z_r_G2vPERpWa5GCMaLPenfIeEtIb00kiwASi3D3qG0=w408-h725-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 4.5 · 17 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> Tu rating de 4.5⭐ con múltiples reseñas demuestra que tus clientas confían en tu trabajo y te recomiendan. En el nicho de lashistas, esos números hablan de consistencia en calidad.</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Cuentas con sitio web, pero probablemente falta integración clara de reservas online y WhatsApp Business. Tus clientas tienen que buscar el número, enviar mensajes sin saber si llegarán, y esperar respuesta manual.</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Un sistema web con reservas 24/7 + WhatsApp integrado confirma automáticamente citas, evita dobles agendamientos y tus clientas ven disponibilidad en tiempo real sin necesidad de mensajear.</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Prolash Company",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "PROLASH Company",
+  tagline:       "PROLASH Company en Durango: extensiones de pestañas con 4.5⭐ de confianza de clientes. Tu aliada en belleza y pestañas impresionantes.",
   ciudad:        "Durango",
   direccion:     "C. Independencia 540, Zona Centro, 34000 Durango, Dgo., México",
   tel:           "526183093165",
