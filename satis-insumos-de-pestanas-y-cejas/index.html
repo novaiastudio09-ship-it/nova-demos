@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Satis Insumos De Pestañas Y Cejas · Durango</title>
+<title>Satis insumos de pestañas y cejas · Durango</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnsvB09eRTL5k1QKw-4Qf7eFLbsoxUY59w9okvgyBI1JLjHlqPyaYJwtQka0AdGCTKeol42rDFcFafK9fL8whuJkp2H2Le5iCew2VG4SFc_efI3boVhJ-bH6srWC8c5wdTjylrGBw=w408-h408-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,21 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 5 · 5 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
+  <section class="analisis-neg">
     <div class="an-wrap">
       <h2 class="an-title">Análisis de tu negocio</h2>
       <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
+      <div class="analisis-negocio"><div class="analisis-item fortaleza"><span>✅ Fortaleza detectada:</span> 5 estrellas en todas las reseñas — tus clientes te recomiendan sin dudarlo. Un récord de satisfacción que habla de la calidad de tus insumos</div>
+<div class="analisis-item oportunidad"><span>⚠️ Oportunidad:</span> Ya tienes sitio web, pero lashistas en Durango necesitan hacer pedidos sin salir de WhatsApp o agendar consultas de urgencia 24/7 cuando se les acabó el stock</div>
+<div class="analisis-item solucion"><span>💡 Cómo lo resolvemos:</span> Sistema integrado con catálogo de productos, carrito de compra rápido y WhatsApp Business para que tus clientas hagan pedidos a cualquier hora. Confirmación automática y stock visible en tiempo real</div></div>
     </div>
   </section>
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1177,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Satis Insumos De Pestañas Y Cejas",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Satis insumos de pestañas y cejas",
+  tagline:       "Satis insumos de pestañas y cejas en Durango: todo lo que necesitas para perfeccionar tus servicios. Recibidos con 5 estrellas de todas nuestras clientas.",
   ciudad:        "Durango",
   direccion:     "Pereyra 604, centro, 34000 Durango, Dgo., México",
   tel:           "526751055036",

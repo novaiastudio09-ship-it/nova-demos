@@ -9,7 +9,7 @@
 <!-- SECURITY: Content-Security-Policy — permite inline styles/scripts (necesarios para la app),
      Google Fonts, y cualquier imagen (fotos de cliente via URL). -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' https:; img-src * data: https://images.unsplash.com https://lh3.googleusercontent.com https://lh4.googleusercontent.com https://lh5.googleusercontent.com; font-src https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;">
-<title>Zaireth Lash Home Studio 🎀🌸 · Juárez</title>
+<title>Zaireth lash home studio 🎀🌸 · Juárez</title>
 <!-- Google Fonts — crossorigin requerido para carga CORS correcta (SRI no aplica a Fonts API) -->
 <link id="gFonts" href="" rel="stylesheet" crossorigin="anonymous">
 <style>
@@ -789,7 +789,7 @@ footer{
     </div>
   </header>
 
-  <section class="hero" style="--hero-bg: url('{{HERO_IMG}}');">
+  <section class="hero" style="--hero-bg: url('https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm8MAs99xmbyz4dUfH_CzrXLStzsNXzcle65TpjygnmnATrQ1LYt1tE3GIbWVg_KTaexNJ1a1l-8dbcjsYfeH_uYmy_0-KA9VuQ2yLILAyVVTphy5HWLrKAKcZKeR2Ujdn187lTiLKFhEw=w408-h883-k-no');">
     <div class="hero-tag fade-in" id="heroTag"></div>
     <h1 class="fade-in" id="heroTitle"></h1>
     <p class="hero-sub fade-in" id="heroSub"></p>
@@ -799,24 +799,13 @@ footer{
     </div>
   </section>
 
-  <section data-if="RATING" class="rating-hero-badge">
-    <div class="rating-pill">⭐ {{RATING}} · {{REVIEWS_COUNT}} reseñas en Google</div>
+  <section class="rating-hero-badge">
+    <div class="rating-pill">⭐ 5 · 1 reseñas en Google</div>
   </section>
 
-  <section data-if="ANALISIS_HTML" class="analisis-neg">
-    <div class="an-wrap">
-      <h2 class="an-title">Análisis de tu negocio</h2>
-      <p class="an-sub">Basado en las reseñas reales de tus clientas</p>
-      {{ANALISIS_HTML}}
-    </div>
-  </section>
+  
 
-  <section data-if="TESTIMONIOS_HTML" class="testim-seccion">
-    <div class="ts-wrap">
-      <h2 class="ts-title">Lo que dicen tus clientas</h2>
-      {{TESTIMONIOS_HTML}}
-    </div>
-  </section>
+  
 
   <section class="services">
     <div class="services-inner fade-in">
@@ -1180,8 +1169,8 @@ footer{
 // ║   9. linkPago → Payment Link de Stripe (dejar "" para ocultarlo)║
 // ╚══════════════════════════════════════════════════════════════════╝
 const C = {
-  nombre:        "Zaireth Lash Home Studio 🎀🌸",
-  tagline:       "{{HERO_COPY}}",
+  nombre:        "Zaireth lash home studio 🎀🌸",
+  tagline:       "Bienvenida a Zaireth lash home studio 🎀🌸, tu estudio de pestañas y uñas en Juárez",
   ciudad:        "Juárez",
   direccion:     "Basílica de Sta. Malaga 3321-B, 32575 Juárez, Chih., México",
   tel:           "526562642641",
